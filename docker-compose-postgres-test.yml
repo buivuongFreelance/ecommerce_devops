@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+  postgres_test:
+    container_name: postgres_test
+    image: postgres
+    environment:
+      POSTGRES_USER: tomrot
+      POSTGRES_PASSWORD: vnng2018
+      POSTGRES_DB: tomrot
+      PGDATA: /data/postgres
+    volumes:
+      - postgres_test:/data/postgres
+    ports:
+      - '5433:5432'
+    networks:
+      - postgres_test
+    restart: unless-stopped
+networks:
+  postgres_test:
+    driver: bridge
+volumes:
+  postgres_test:

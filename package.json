@@ -1,0 +1,59 @@
+{
+  "name": "devops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prod": "node dist/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "babel src --out-dir dist",
+    "clean": "rm -rf dist",
+    "pgadmin:up": "docker-compose -f docker-compose-pgadmin4.yml up -d",
+    "pgadmin:down": "docker-compose -f docker-compose-pgadmin4.yml down --volumes --rmi all",
+    "postgres:up": "docker-compose -f docker-compose-postgres.yml up -d",
+    "postgres:down": "docker-compose -f docker-compose-postgres.yml down --volumes --rmi all",
+    "postgres-test:up": "docker-compose -f docker-compose-postgres-test.yml up -d",
+    "postgres-test:down": "docker-compose -f docker-compose-postgres-test.yml down --volumes --rmi all",
+    "mongo:up": "docker-compose -f docker-compose-mongo.yml up -d",
+    "mongo:down": "docker-compose -f docker-compose-mongo.yml down --volumes --rmi all",
+    "jenkins:up": "docker-compose -f docker-compose-jenkins.yml up -d",
+    "jenkins:down": "docker-compose -f docker-compose-jenkins.yml down --volumes --rmi all",
+    "rabbitmq:up": "docker-compose -f docker-compose-rabbitmq.yml up -d",
+    "rabbitmq:down": "docker-compose -f docker-compose-rabbitmq.yml down --volumes --rmi all",
+    "redis:up": "docker-compose -f docker-compose-redis.yml up -d",
+    "redis:down": "docker-compose -f docker-compose-redis.yml down --volumes --rmi all",
+    "bullboard:up": "docker-compose -f docker-compose-bullboard.yml up -d",
+    "bullboard:down": "docker-compose -f docker-compose-bullboard.yml down --volumes --rmi all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/dingtoi/devops.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "is_js": "^0.9.0",
+    "knex": "^0.21.3",
+    "mongodb": "^3.6.0",
+    "nodemon": "^2.0.4",
+    "pg": "^8.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  },
+  "homepage": "https://bitbucket.org/dingtoi/devops#readme"
+}

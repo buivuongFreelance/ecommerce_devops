@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  bullboard:
+    container_name: bullboard
+    image: deadly0/bull-board
+    restart: always
+    ports:
+      - 5000:3000
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: vnng@2018
+      REDIS_USE_TLS: 'false'
